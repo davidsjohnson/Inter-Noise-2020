@@ -1,0 +1,66 @@
+\section{Related Work}
+
+\subsection{Gas Leak Detection}
+
+\subsection{Industrial Sound Analysis}
+
+\subsection{notes}
+-Ultrasonic scanning system for robotic detection \cite{Guenther2016:ultrasonic}. Uses standard statistic measures comparing sound pressure level to SNR to determine leak.
+- many handheld ultrasonic systems (see above paper for some refs)
+- jsn: What are the challenges of ultrasonic?
+
+The use of acoustic sensors is a common means in the field of leakage detection.
+In the field of condition monitoring for overpressure vessels surface microphones, for example, which are monitored by means of structure-borne noise emissions detect material fatigue and crack formation \simpletodo{[REF 20]}. 
+In the case of airborne sound Leakage detection in practice is based on ultrasonic measuring devices, which are either installed near vulnerable areas or are portable. 
+Since more complex compressed air systems usually extend over entire production plants and exact localization of high throughput turbulence leakage has the highest priority, is mobile detection solutions.
+Ultrasonic sensors also enable non-destructive testing and can be performed without interrupting the ongoing operation of a system can be used. 
+The turbulence leakages discussed in chapter 2.3 show a specific acoustic signature (corona) in the frequency range 38 - 42 kHz, so that appropriate measuring instruments are designed for this area.
+ The converters are In addition to small-diaphragm condenser microphones \simpletodo{[REF 21]}, piezoelectric microphones are mainly used \simpletodo{[REF 22}.
+
+Ultrasonic sensors have a strong directional characteristic, which is large main lobe and much smaller side lobes. 
+In practice is referred to as the response curve. Depending on the requirements, for
+individual sensors a compromise between the bundling capacity of the main lobe, the
+dimensions and the side lobes [23]. 
+In comparison to the directional characteristics (e.g. omnidirectional and cardioid) of microphones for audio applications however, the strong frontal directivity with accompanying sensitivity always remains
+exist. 
+This characteristic is essential for the ultrasonic measuring range, since sound with increasing frequencies, the damping by air absorption increases [21].
+
+All these characteristics of the measuring devices lead to the fact that the detection process in the
+in the immediate vicinity of the guest carriers. 
+Due to the narrow directional characteristic all relevant areas of a gas container are scanned. 
+The Occurrence of specific leakage frequencies is acoustically monitored in real time via loudspeaker
+or headphone signals. 
+The translation of an imperceptible ultrasonic frequency into the audible frequency range is done by a heterodyne method.
+The Ultrasonic level is also translated to provide information about the leakage rate [24].
+
+
+The inspection of the lines must be structured to prevent the overlooking of
+to avoid leaks. If other compressed air sources such as exhaust valves or
+maintenance units (see chapter 3), overlapping may occur. This competing
+Ultrasound can impair the measuring accuracy or damage the sensor connected to a
+Falsify the level measured in the leak [25].
+
+2.7 Technology comparison
+In the following a comparison between the leakage detection discussed in 2.6 with
+ultrasound and a detection attachment with microphone for the audio range (20 Hz - 20
+KHz) should be undertaken. First and foremost the applicability of the respective
+technology in the foreground. The comparison is shown in Table 2.2.
+The distance problem makes the ultrasonic method complex. Ultrasonic measurements
+are provided at regular intervals or are used if a leakage
+is to be analytically displayed and localized via system variables. Measuring microphones
+in the audio range are clearly inferior in terms of measurement accuracy, but could
+be placed in the service of permanent monitoring.
+
+
+
+
+
+Due to the ability of neural networks to represent different state variables such as noise emissions, for example, can be classified with sufficient accuracy to process monitoring, there are already various experiments and studies in the field of about that. 
+Already in 2004, KOTANI et al. and ZHANG et al. were able to successfully Application of NN for the detection of gas leaks by recording airborne sound in noisy environments \simpletodo{[REF 35]}. 
+The results of the two studies confirmed the feasibility of process monitoring supported by ML.
+Especially in ZHANG, the ability of neural networks as adaptive non-linear filters to act, highlighted \simpletodo{[REF]}. 
+KOTANI has experience with recordings, which are a longer period of time. This was always done with artificially created, hole-shaped Leaks worked.
+Also about the use of surface microphones for condition monitoring of larger gas containers there are current publications, in for example, where different NN models are weighed against each other \simpletodo{[REF 36]}.
+However, since in this work a structure-borne sound based approach is followed, the Results not transferable to the present concept.
+LIEBETRAU et al. show that a DNN with the recordings of the impact noise of turned parts can be trained to detect defective parts \simpletodo{[REF 30]}. 
+In the following main part, a new experimental approach will be pursued. The main idea is to develop a dynamic leakage of adjustable leakage rates to generate and analyze.
