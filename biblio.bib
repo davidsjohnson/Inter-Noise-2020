@@ -2,13 +2,70 @@
 % Acoustic methods
 @inproceedings{Guenther2016:ultrasonic,
 author = {Guenther, Thomas and Kroll, Andreas},
-booktitle = {2016 IEEE Sensors Applications Symposium (SAS)},
+booktitle = {Proceedings of the 2016 IEEE Sensors Applications Symposium (SAS)},
 doi = {10.1109/SAS.2016.7479830},
 pages = {116--121},
 publisher = {IEEE},
 title = {{Automated detection of compressed air leaks using a scanning ultrasonic sensor system}},
 year = {2016}
 }
+
+@article{Steckel2014:local,
+author = {Steckel, Jan and Peremans, Herbert},
+doi = {10.1109/ICSENS.2014.6985178},
+journal = {Proceedings of IEEE Sensors},
+number = {December},
+pages = {1026--1029},
+publisher = {IEEE},
+title = {Ultrasound-based air leak detection using a random microphone array and spars   e representations},
+volume = {2014-Decem},
+year = {2014}
+}
+
+@article{Eret2012:beamform,
+author = {Eret, Petr and Meskell, Craig},
+doi = {10.1155/2012/689379},
+journal = {Advances in Acoustics and Vibration},
+title = {{Microphone arrays as a leakage detection tool in industrial compressed air systems}},
+volume = {2012},
+year = {2012}
+}
+
+@article{Murvay2012:survey,
+author = {Murvay, Pal Stefan and Silea, Ioan},
+doi = {10.1016/j.jlp.2012.05.010},
+journal = {Journal of Loss Prevention in the Process Industries},
+number = {6},
+pages = {966--973},
+publisher = {Elsevier Ltd},
+title = {{A survey on gas leak detection and localization techniques}},
+url = {http://dx.doi.org/10.1016/j.jlp.2012.05.010},
+volume = {25},
+year = {2012}
+}
+
+
+% ML
+@article{Desmet2017:ad,
+author = {Desmet, Antoine and Delore, Matthew},
+journal = {Proceedings of the Annual Conference of the Prognostics and Health Management Society, PHM},
+pages = {211--220},
+title = {{Leak detection in compressed air systems using unsupervised anomaly detection techniques}},
+year = {2017}
+}
+
+@inproceedings{Schenck2019:airleakslam,
+author = {Schenck, Anthony and Daems, Walter and Steckel, Jan},
+booktitle = {Proceedings of IEEE Sensors},
+doi = {10.1109/SENSORS43011.2019.8956631},
+publisher = {IEEE},
+title = {{AirleakSlam: Detection of Pressurized Air Leaks Using Passive Ultrasonic Sensors}},
+volume = {2019-Octob},
+year = {2019}
+}
+
+
+
 
 % Background
 @book{Radgen.2001,
@@ -20,6 +77,160 @@ title = {Compressed air systems in the European Union: Energy, emissions, saving
 isbn = {3932298160}
 }
 
+@book{sdt:handbook,
+author = {{Ultrasound Solution SDT International}},
+address = {Brussels},
+edition = {Second},
+publisher = {SDT International},
+title = {{Leak Surveyors Handbook}},
+url = {htttp://www.sdthearmore.com},
+}
+
+
+% ISA / IMA
+
+@INPROCEEDINGS{Zhang2003,
+  author={ {Sheng Zhang} and T. {Asakura} and S. {Hayashi}},
+  booktitle={Proceedings of the SICE 2003 Annual Conference}, 
+  title={Leakage fault detection of pneumatic pipe system using neural networks}, 
+  year={2003},
+  volume={3},
+  number={},
+  pages={2482-2487 Vol.3},}
+
+@inproceedings{Cano2017:isa_sound_sep,
+address = {Kos Island, Greece},
+author = {Cano, Estefan{\'{i}}a and Nowak, Johannes and Grollmisch, Sascha},
+booktitle = {2017 24th Eur. Signal Processing Conf.},
+keywords = {SMT,abt-md,ima,sound separation},
+mendeley-tags = {ima,sound separation},
+title = {{Exploring Sound Source Separation for Acoustic Condition Monitoring in Industrial Scenarios}},
+year = {2017}
+}
+
+@inproceedings{Grollmisch2020:pucks,
+address = {N{\"{u}}rnberg},
+author = {Grollmisch, Sascha and Johnson, David and Kr{\"{u}}ger, Tobias and Liebetrau, Judith},
+booktitle = {Proceedings of the Sensor and Measurement Science International (SMSI) (accepted)},
+title = {{Plastic Material Classification using Neural Network based Audio Signal Analysis}},
+year = {2020}
+}
+
+@inproceedings{Grollmisch2019:isa,
+address = {A Coru{\~{n}}a, Spain},
+author = {Grollmisch, Sascha and Abe{\ss}er, Jakob and Liebetrau, Judith and Lukashevich, Hanna},
+booktitle = {Proceedings of the European Signal Processing Conference (EUSIPCO)},
+title = {{Sounding Industry: Challenges and Datasets for Industrial Sound Analysis}},
+year = {2019}
+}
+
+@inproceedings{Johnson2020:robust,
+address = {Amsterdam, The Netherlands},
+author = {Johnson, David and Grollmisch, Sascha},
+booktitle = {Proceedings of the European Signal Processing Conference (EUSIPCO)},
+title = {{Techniques Improving the Robustness of Deep Learning Models for Industrial Sound Analysis}},
+year = {2020 Accepted}
+}
+
+@inproceedings{Grollmisch2020:embeddings,
+address = {Amsterdam, The Netherlands},
+author = {Grollmisch, Sascha, and Cano, Estefanía, and Kehling, Christian, and Taenzer, Micheal},
+booktitle = {Proceedings of the European Signal Processing Conference (EUSIPCO)},
+title = {{Analyzing the Potential of Pre-Trained Embeddings for Audio Classification Tasks}},
+year = {2020 Accepted}
+}
+
+@inproceedings{Koizumi2019:toyadmos,
+  
+    author = {Koizumi, Yuma and Saito, Shoichiro and Uematsu, Hisashi and Harada, Noboru and Imoto, Keisuke},
+    booktitle = {IEEE WASPAA},
+    doi = {10.1109/WASPAA.2019.8937164},
+    month = {oct},
+    pages = {313--317},
+    title = {{ToyADMOS: A Dataset of Miniature-Machine Operating Sounds for Anomalous Sound Detection}},
+    year = {2019}
+}
+
+@article{Purohit2019:mimii,
+author = {Purohit, Harsh and Tanabe, Ryo and Ichige, Kenji and Endo, Takashi and Nikaido, Yuki and Suefusa, Kaori and Kawaguchi, Yohei},
+journal = {arXiv:1909.0934},
+shorttitle = {MIMII Dataset},
+title = {{MIMII Dataset: Sound Dataset for Malfunctioning Industrial Machine Investigation and Inspection}},
+url = {http://arxiv.org/abs/1909.09347 internal-pdf://0.0.0.114/1909.html},
+year = {2019}
+}
+
+% Data Aug
+@inproceedings{Zhang2018:mixup,
+    title={{mixup: Beyond Empirical Risk Minimization}},
+    author={Hongyi Zhang and Moustapha Cisse and Yann N. Dauphin and David Lopez-Paz},
+    booktitle={Proceedings of the Sixth International Conference on Learning Representations (ICLR)},
+    year={2018}
+}
+
+@article{zhong2017randomerase,
+  title={Random erasing data augmentation},
+  author={Zhong, Zhun and Zheng, Liang and Kang, Guoliang and Li, Shaozi and Yang, Yi},
+  journal={arXiv:1708.04896},
+  year={2017}
+}
+
+@article{Salamon2017,
+  author = {Salamon, Justin and Bello, Juan Pablo},
+  doi = {10.1109/LSP.2017.2657381},
+  journal = {IEEE Signal Processing Letters},
+  month = {mar},
+  number = {3},
+  pages = {279--283},
+  title = {{Deep Convolutional Neural Networks and Data Augmentation for Environmental Sound Classification}},
+  volume = {24},
+  year = {2017}
+}
+
+@inproceedings{Park2019:spec_aug,
+  title	= {SpecAugment: A Simple Augmentation Method for Automatic Speech Recognition},
+  author	= {Daniel S. Park and William Chan and Yu Zhang and Chung-Cheng Chiu and Barret Zoph and Ekin Dogus Cubuk and Quoc V. Le},
+  year	= {2019},
+  booktitle	= {Proceedings of the 20th Annual Conference of the International Speech Communication Association (INTERSPEECH)}
+}
+
+
+%  Deep Learning
+@INPROCEEDINGS{Hershey2017:audiocnn,  
+author={S. {Hershey} and S. {Chaudhuri} and D. P. W. {Ellis} and J. F. {Gemmeke} and A. {Jansen} and R. C. {Moore} and M. {Plakal} and D. {Platt} and R. A. {Saurous} and B. {Seybold} and M. {Slaney} and R. J. {Weiss} and K. {Wilson}},  
+booktitle={Proceedings of the 2017 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},   
+title={CNN architectures for large-scale audio classification},   year={2017},  
+volume={},  
+number={},  
+pages={131-135}
+}
+
+@inproceedings{imagenet2009,
+        AUTHOR = {Deng, J. and Dong, W. and Socher, R. and Li, L.-J. and Li, K. and Fei-Fei, L.},
+        TITLE = {{ImageNet: A Large-Scale Hierarchical Image Database}},
+        BOOKTITLE = {Proceedings of the Conference on Computer Vision and Pattern Recognition (CVPR)},
+        YEAR = {2009},
+        BIBSOURCE = "http://www.image-net.org/papers/imagenet_cvpr09.bib"
+}
+        
+@inproceedings{Ni2019:amazon,
+  title={Justifying Recommendations using Distantly-Labeled Reviews and Fine-Grained Aspects},
+  author={Ni, Jianmo and Li, Jiacheng and McAuley, Julian},
+  booktitle={Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},
+  pages={188--197},
+  year={2019}
+}
+
+@article{Lecun2015:deep,
+  title={Deep learning},
+  author={LeCun, Yann and Bengio, Yoshua and Hinton, Geoffrey},
+  journal={Nature},
+  volume={521},
+  number={7553},
+  pages={436--444},
+  year={2015},
+  publisher={Nature Publishing Group}
+}
 
 
 % JAKOBS ARE BELOW (MAY NEED BETTER ORGANIZATION)
@@ -198,22 +409,6 @@ isbn = {3932298160}
  series = {Fachwissen Technische Akustik},
  editor = {M{\"o}ser, M.},
  doi = {10.1007/978-3-662-57915-2}
-}
-
-
-@article{Murvay.2012,
- abstract = {Journal of Loss Prevention in the Process Industries, 25 (2012) 966-973. doi:10.1016/j.jlp.2012.05.010},
- author = {Murvay, P. and Silea, I.},
- year = {2012},
- title = {A survey on gas leak detection and localization techniques},
- keywords = {Gas leak;Leak detection;Leak localization;Pipeline},
- urldate = {10.11.2018},
- pages = {966--973},
- volume = {25},
- number = {6},
- issn = {09504230},
- journal = {Journal of Loss Prevention in the Process Industries},
- doi = {10.1016/j.jlp.2012.05.010}
 }
 
 @incollection{Nowak.,

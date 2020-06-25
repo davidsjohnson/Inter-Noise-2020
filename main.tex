@@ -38,6 +38,10 @@
 \usepackage{xcolor}
 
 \usepackage{booktabs}
+\usepackage{float}
+
+\usepackage{subcaption}
+\usepackage{hyperref}
 
 \newcommand{\simpletodo}[1]{{\color{red}#1}}
 
@@ -56,7 +60,7 @@
 \renewcommand{\thesubsection}{\arabic{subsection}}
 
 
-\renewcommand{\refname}{6. \hspace{3mm} REFERENCES} 
+\renewcommand{\refname}{10. \hspace{3mm} REFERENCES} 
 \setlength{\footnotesep}{12pt}
 
 \begin{document}
@@ -77,25 +81,25 @@ Neural Networks
 \renewcommand\baselinestretch{1}
 \begin{flushleft}
 
-David Johnson\footnote{jsn@idmt.fraunhofer.de}\\
+David Johnson\footnote{david.scott.johnson@idmt.fraunhofer.de}\\
 Fraunhofer Institute for Digital Media Technology (IDMT)\\
 Industrial Media Applications\\
 Ehrenbergstraße 31, 98693 Ilmenau, Germany\\
 
 \vskip.5cm
-Jakob Kirner\footnote{kirnjb@idmt.fraunhofer.de}\\
+Jakob Kirner\footnote{jakob.kirner@idmt.fraunhofer.de}\\
 Fraunhofer Institute for Digital Media Technology (IDMT)\\
 Industrial Media Applications\\
 Ehrenbergstraße 31, 98693 Ilmenau, Germany\\
 
 \vskip.5cm
-Sascha Grollmisch\footnote{goh@idmt.fraunhofer.de}\\
+Sascha Grollmisch\footnote{sascha.grollmisch@idmt.fraunhofer.de}\\
 Fraunhofer Institute for Digital Media Technology (IDMT)\\
 Industrial Media Applications\\
 Ehrenbergstraße 31, 98693 Ilmenau, Germany\\
 
 \vskip.5cm
-Judith Liebetrau \footnote{ltu@idmt.fraunhofer.de}\\
+Judith Liebetrau \footnote{judith.liebetrau@idmt.fraunhofer.de}\\
 Fraunhofer Institute for Digital Media Technology (IDMT)\\
 Industrial Media Applications\\
 Ehrenbergstraße 31, 98693 Ilmenau, Germany\\
@@ -103,76 +107,40 @@ Ehrenbergstraße 31, 98693 Ilmenau, Germany\\
 \end{flushleft}
 
 \textbf{\centerline{ABSTRACT}\\
-Compressed air is utilized in many branches of industry and one of the most expensive energy sources of industrial plants. Therefore, efficient detection of air pressure leaks goes hand in hand with cost savings and increased  operational reliability. Some procedures of leakage detection for pressure lines are based upon the analysis of sound emissions. Such solutions use  specific ultrasonic emission patterns to detect leakage; alternatively, personnel trained to hear leaks are deployed for detection. In this paper, we evaluate the potential of using airborne sound emissions in the audible hearing range for the automated detection of compressed air leakage using artificial neural networks. Therefore, a novel dataset was created and published. It contains recordings from several microphones at different distances of adjustable leakage from a pneumatic contraption with different pressure levels. Additionally, industrial background noises were applied at different levels to simulate real-world sound environments. Using this dataset, a deep neural network was trained for leakage detection. The results show that leakage detection by means of airborne sound in the audible range using machine learning techniques is possible, and is a promising contactless and automatic detection method.}
+Compressed air is utilized in many branches of industry and represents one of the most expensive energy sources of industrial plants. The efficient detection of air pressure leaks goes hand-in-hand with cost savings and increased operational reliability. Some procedures of leakage detection for pressure lines are based upon the analysis of sound emissions. Such solutions use specific ultrasonic emission patterns to detect leakage; alternatively, personnel trained to hear leaks are deployed for detection. In this paper, we evaluate the potential of airborne sound analysis in the audible hearing range for the automated detection of compressed air leakage using artificial neural networks. Therefore, a novel dataset is developed and published. It contains recordings of adjustable leakage from a pneumatic contraption with different pressure levels from several microphones at different distances. Additionally, industrial background noises were applied to simulate real-world sound environments. Using this dataset, a convolutional neural network is trained for leakage detection. The results show that leakage detection by means of airborne sound in the audible range using machine learning techniques is possible and a promising contactless automated detection method.}
 
 
 \section{Introduction}
 
-Compressed air is commonly used within manufacturing and other industries, and may account for up to 10\% of industrial consumption of electricity.
-Compressed air systems, however, have low energy efficiency with possible energy savings from 5 to 50\%, and according to Radgen "reducing air leaks is probably the single most important energy savings measure, applicable to almost all systems" \cite{Radgen.2001}. 
-Searching for leaks is often a manual process using ultrasonic hand held leak 'sniffers' \cite{Radgen.2001}, visual detection, which requires a leak spray \cite{Guenther2016:ultrasonic}, or in some cases simply using personnel trained to hear leaks.
+Compressed air is a common source of energy in manufacturing and other industries, and may account for up to 10\% of industrial consumption of electricity.
+Compressed air systems, however, have low energy efficiency with possible energy savings from 5 to 50\%, and according to Radgen  \cite{Radgen.2001} "reducing air leaks is probably the single most important energy savings measure, applicable to almost all systems". 
+Searching for leaks is typically a manual process using hand held leak "sniffers" equiped with highly directional ultrasonic microphones \cite{Radgen.2001, Schenck2019:airleakslam}, or using visual detection, which requires a leak spray \cite{Guenther2016:ultrasonic}. 
+To detect leaks acoustically, an operator has to walk around the entire facility pointing a listening device towards all possible leak locations in the compressed air system. Using specialized software that visualizes and auralizes the acoustic emission, the operator must then identify if a leak is present \cite{sdt:handbook}. This process requires experienced operators, is time consuming, and may require expensive shutdowns of the production facility. The effectiveness of such an approach is dependent on the expertise and the thoroughness of the sensor operator \cite{Murvay2012:survey}. 
+In addition to intensive manual labor, these methods often require shutdowns of entire facilities making leak detection an expensive process \cite{Schenck2019:airleakslam}. Identifying new techniques to improve and automate this process has the potential to lead to substantial savings in industrial energy usage and costs.
 
-As air, or other gas, escapes a pipeline through a leak it decompresses as it enters a lower pressure environment causing turbulence. The turbulence causes an acoustic emission allowing the leak to be detected acoustically \cite{Genuit.2010}.
-For the airborne sound based detection of air, or other gas, leaks, localisation by ultrasound is a common method, whereby the detection process must take place in the immediate vicinity of the gas carrier \cite{Chen.2007}.
-To avoid the distance problem of ultrasonic technologies for leak detection, this paper investigates the potential for leak detection using airborne sound in the auditory range (20 Hz - 20 kHz) combined with modern deep learning methods.
+As air, or other gas, escapes a pipeline through a leak it decompresses as it enters a lower pressure environment causing turbulence. The turbulence causes an acoustic emission in the audible and ultrasonic frequencies affording the use of airborne sound based methods for leak detection\cite{Genuit.2010, Eret2012:beamform}.
+Typically, the detection and localization of leaks using airborne sound is performed with ultrasonic sensors, in which case the detection process must take place in the immediate vicinity of the gas carrier or use special long distance sensors \cite{Chen.2007}. Ultrasonic microphones, however, are highly susceptible to background noise due to their low energies \cite{Eret2012:beamform}.
+To overcome these challenges, this paper investigates the potential for leak detection using airborne sound in the auditory range (20 Hz - 20 kHz) with modern deep learning methods. By installing microphones around the compressed air network and automatically analyzing the airborne sound with machine learning, it might be possible to monitor a large area continuously from a distance without the need to stop production processes. Faulty lines or connections could thus be identified relatively quickly and cost-effectively. 
 
-The use of audible sound in industrial settings has grown in interest in recent years for automated quality control and predictive maintenance. Using traditional audio signal processing and machine learning techniques, however, require expert based hand-crafted features for detection. The recent trend in deep learning attempts to resolve this issue with representation learning as part of the model training process \simpletodo{[REFS]}. Research in the field of industrial sound analysis (ISA) has shown the potential for the use of deep learning in industrial settings \simpletodo{[IMA REFS]}.  One of the main challenges in the application of machine learning, and especially deep learning, to an industrial task is the need for a large dataset. Oftentimes data for a specific task is expensive and time consuming to obtain.  
+In recent years, the use of audible sound for predictive maintenance and automated quality control in industrial settings has grown in interest. Traditional analysis methods using audio signal processing and machine learning require expert designed hand-crafted features for fault detection. Deep learning attempts to resolve this issue by making representation learning part of the model training process \cite{Lecun2015:deep}. In industrial settings, deep learning with audio has been shown to be effective for common tasks in the research field of industrial sound analysis (ISA) \cite{Grollmisch2019:isa, Grollmisch2020:pucks, Johnson2020:robust, Grollmisch2020:embeddings}. One of the main challenges in applying deep learning methods to industrial tasks is the need for a large dataset. Obtaining well-labeled data is often expensive and time consuming, causing organizations to be reluctant to integrate deep learning into their processes. To our knowledge, there are no known datasets for the case of gas and air leak detection.
 
-To our knowledge, there are no known datasets for the case of gas leak detection. Furthermore, there are no studies showing the effectiveness of  The main contributions of this work are newly published dataset for compressed air leaks to foster further research in this area, and a baseline convolution neural network (CNN) \simpletodo{[REF]} that is able to accurately detect air leaks even in noisy conditions.  To show the potential of gas leak detection using audible sound with deep learning, we perform experiments with different types of background noise and leak conditions, as well as microphones at different distances from the leak source. 
+To address these gaps, the contribution of this work is to present a novel dataset for compressed air leak detection together with a convolution neural network (CNN) baseline system. CNNs have been successfully applied to tasks requiring audible sound \cite{Hershey2017:audiocnn, Grollmisch2020:pucks}. Furthermore, CNNs have shown to be more robust and less prone to overfitting than traditional feed forward networks \cite{Johnson2020:robust}. To show the potential of gas leak detection using audible sound with deep learning, we perform experiments with different types of background noise and leak conditions, as well as microphones at different distances from the leak source. The benefit of such a system, is that multiple inexpensive microphones could be placed at critical locations in the compressed air network for improved automation of the leak detection process.
 
-In the rest of this paper, we \simpletodo{...}
-
-
-
-% \subsection{notes}
-
-% - long lived with average lifespan of 13 - 16 years depending on power range \cite{Radgen.2001}
-%  - (retrofiting might be important)
-%  - according to \cite{Radgen.2001} "reducing air leaks is probably the single most important energy savings measure, applicable to almost all systems. awareness of the importance of a regular leak detection programme is low, in part because air lieas are invisible, and generally cause no damage...Hand held leak "sniffers" which detect the noise of air leaks can reduce the cost of leak detection."
-%  - air leak detection can be added at any point in the compress air lifecycle 
-%  - 20\% energy savings
-%  - air leak prevention largest potential gain in compressed air energy savings 42\% share of 5 major energy saving techniques
- 
-%  - 
- 
-%  - CHALLENGES IN LEAK REDUCTION
-%  - invisible and often don't cause immediate damage \cite{Radgen.2001}
-%  - searching for leaks is time consuming and often manual using hand held leak 'sniffers'
-%  - localization of leaks
- 
-%  - Visual detection requires leak spray at location of leak \cite{Guenther2016:ultrasonic}
- 
- 
-% Compress air is a common source of energy in many branches of industry, including transportation, \simpletodo{XXXX and XXXX}. 
-% Pneumatic systems are often used in commercial vehicles and passenger transport; \simpletodo{ADD some more examples. }
-% As in manufacturing, undesired gas leakage due to leaks and leaks is a frequent error pattern: Exposure of CA carriers in the area of the chassis as well as vibration make regular inspections unavoidable.  Reliable maintenance methods for gas carriers ensure safety and energy and thus cost savings \cite{Radgen.2001}. 	
-% Some leakage measurement methods are based on the measurement of sound emissions.  In a given case, turbulent leakage of CA produces clear emission patterns that spread both through the air and through adjacent bodies. 
-% In order to avoid the distance problem of ultrasonic technologies for leak detection, this paper investigates the possibility of airborne sound based leak detection in the auditory range (20 Hz - 20 kHz). 	
-% In addition, the integration of a machine learning system into the detection process  creates new perspectives: A deep neural network (DNN) is used, the configuration of which has already proven itself in the detection of anomalies in components \cite{EstefaniaCanoJohannesNowakandSaschaGrollmisch.}. This network is trained to detect the sound signatures of CA leaks in different scenarios.
-
-
-% \subsection{Gas Leaks}
-
-% A real gas pumping system can never be absolutely tight. DIN EN 1779 lists the so-called leakage rate as a measure of the urgency of a maintenance measure. The following applies: From $q_L > >10^{-2}$ mbarL/s a leakage is classified as "turbulent" \cite{1779}. On a physical level, the pressure difference between the pipeline and the environment is so high that turbulence forms when the pipeline gas escapes. Only the occurrence of turbulence allows the leakage to be detected acoustically \cite{Genuit.2010}. The exhaust jet can be regarded as an acoustic source in the form of a quadrupole emitter \cite{Zeller.2018}, which can also be recorded well from lateral microphone positions.
+% \newpage
+Section \ref{sec:rw} discusses the state-of-the-art in compressed air leak detection, and industrial sound analysis using machine learning methods. Then, the design of the experimental apparatus and data acquisition process are discussed in Sections \ref{sec:app} and \ref{sec:dataset}, followed by an explanation of the baseline classification architecture in Section \ref{sec:baseline}. Sections \ref{sec:exps} and \ref{sec:res} cover the experimental design and corresponding results. Finally, Section \ref{sec:conc} concludes the paper with a discussion of the results and directions for future work.
 
 \input{related_work}
 \input{dataset}
 \input{exps_and_results}
-
-
-\section{Conclusions}
-This is the conclusion section.
+\input{conclusion}
 
 \section{Acknowledgements}
-We gratefully acknowledge Lena Zentner and Dirk Wetzlich from FG Nachgiebige Systeme at Technische Universität Ilmenau for providing the central infrastructure for our experiments.
+We gratefully acknowledge Prof. Dr.-Ing. Lena Zentner and Dirk Wetzlich from FG Nachgiebige Systeme at Technische Universität Ilmenau for providing the central infrastructure for our experiments. 
 
-
+This work has been partly supported by the German Research Foundation (\mbox{BR 1333/20-1}, \mbox{CA 2096/1-1}).
 
 \bibliography{biblio} 
 \bibliographystyle{ieeetr}
-
-
-
 
 
 \end{document}

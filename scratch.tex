@@ -1,0 +1,350 @@
+%%%%% INTRO NOTES %%%%%
+
+% \subsection{notes}
+
+% - long lived with average lifespan of 13 - 16 years depending on power range \cite{Radgen.2001}
+%  - (retrofiting might be important)
+%  - according to \cite{Radgen.2001} "reducing air leaks is probably the single most important energy savings measure, applicable to almost all systems. awareness of the importance of a regular leak detection programme is low, in part because air lieas are invisible, and generally cause no damage...Hand held leak "sniffers" which detect the noise of air leaks can reduce the cost of leak detection."
+%  - air leak detection can be added at any point in the compress air lifecycle 
+%  - 20\% energy savings
+%  - air leak prevention largest potential gain in compressed air energy savings 42\% share of 5 major energy saving techniques
+ 
+%  - 
+ 
+%  - CHALLENGES IN LEAK REDUCTION
+%  - invisible and often don't cause immediate damage \cite{Radgen.2001}
+%  - searching for leaks is time consuming and often manual using hand held leak 'sniffers'
+%  - localization of leaks
+ 
+%  - Visual detection requires leak spray at location of leak \cite{Guenther2016:ultrasonic}
+ 
+ 
+% Compress air is a common source of energy in many branches of industry, including transportation, \simpletodo{XXXX and XXXX}. 
+% Pneumatic systems are often used in commercial vehicles and passenger transport; \simpletodo{ADD some more examples. }
+% As in manufacturing, undesired gas leakage due to leaks and leaks is a frequent error pattern: Exposure of CA carriers in the area of the chassis as well as vibration make regular inspections unavoidable.  Reliable maintenance methods for gas carriers ensure safety and energy and thus cost savings \cite{Radgen.2001}. 	
+% Some leakage measurement methods are based on the measurement of sound emissions.  In a given case, turbulent leakage of CA produces clear emission patterns that spread both through the air and through adjacent bodies. 
+% In order to avoid the distance problem of ultrasonic technologies for leak detection, this paper investigates the possibility of airborne sound based leak detection in the auditory range (20 Hz - 20 kHz). 	
+% In addition, the integration of a machine learning system into the detection process  creates new perspectives: A deep neural network (DNN) is used, the configuration of which has already proven itself in the detection of anomalies in components \cite{EstefaniaCanoJohannesNowakandSaschaGrollmisch.}. This network is trained to detect the sound signatures of CA leaks in different scenarios.
+
+
+% \subsection{Gas Leaks}
+
+% A real gas pumping system can never be absolutely tight. DIN EN 1779 lists the so-called leakage rate as a measure of the urgency of a maintenance measure. The following applies: From $q_L > >10^{-2}$ mbarL/s a leakage is classified as "turbulent" \cite{1779}. On a physical level, the pressure difference between the pipeline and the environment is so high that turbulence forms when the pipeline gas escapes. Only the occurrence of turbulence allows the leakage to be detected acoustically \cite{Genuit.2010}. The exhaust jet can be regarded as an acoustic source in the form of a quadrupole emitter \cite{Zeller.2018}, which can also be recorded well from lateral microphone positions.
+
+
+
+%%%%% RW NOTES %%%%%%
+% \subsection{notes from BA (translated)}
+
+% - Compressed air leaks creates broadband noise in the audible and ultrasonic frequencies \cite{Eret2012:beamform}.
+
+% - \cite{Guenther2016:ultrasonic} proposed an ultrasonic scanning system for robotic detection implemented with signal processing to determine the sound pressure level from the ultrasonic signals.
+
+% The use of acoustic sensors is a common means in the field of leakage detection.
+% In the field of condition monitoring for overpressure vessels surface microphones, for example, which are monitored by means of structure-borne noise emissions detect material fatigue and crack formation \simpletodo{[REF 20]}. 
+% In the case of airborne sound Leakage detection in practice is based on ultrasonic measuring devices, which are either installed near vulnerable areas or are portable. 
+% Since more complex compressed air systems usually extend over entire production plants and exact localization of high throughput turbulence leakage has the highest priority, is mobile detection solutions.
+% Ultrasonic sensors also enable non-destructive testing and can be performed without interrupting the ongoing operation of a system can be used. 
+% The turbulence leakages discussed in chapter 2.3 show a specific acoustic signature (corona) in the frequency range 38 - 42 kHz, so that appropriate measuring instruments are designed for this area.
+%  The converters are In addition to small-diaphragm condenser microphones \simpletodo{[REF 21]}, piezoelectric microphones are mainly used \simpletodo{[REF 22}.
+
+% Ultrasonic sensors have a strong directional characteristic, which is large main lobe and much smaller side lobes. 
+% In practice is referred to as the response curve. Depending on the requirements, for
+% individual sensors a compromise between the bundling capacity of the main lobe, the
+% dimensions and the side lobes [23]. 
+% In comparison to the directional characteristics (e.g. omnidirectional and cardioid) of microphones for audio applications however, the strong frontal directivity with accompanying sensitivity always remains
+% exist. 
+% This characteristic is essential for the ultrasonic measuring range, since sound with increasing frequencies, the damping by air absorption increases [21].
+
+% All these characteristics of the measuring devices lead to the fact that the detection process in the
+% in the immediate vicinity of the guest carriers. 
+% Due to the narrow directional characteristic all relevant areas of a gas container are scanned. 
+% The Occurrence of specific leakage frequencies is acoustically monitored in real time via loudspeaker
+% or headphone signals. 
+% The translation of an imperceptible ultrasonic frequency into the audible frequency range is done by a heterodyne method.
+% The Ultrasonic level is also translated to provide information about the leakage rate [24].
+
+
+% The inspection of the lines must be structured to prevent the overlooking of
+% to avoid leaks. If other compressed air sources such as exhaust valves or
+% maintenance units (see chapter 3), overlapping may occur. This competing
+% Ultrasound can impair the measuring accuracy or damage the sensor connected to a
+% Falsify the level measured in the leak [25].
+
+% 2.7 Technology comparison
+% In the following a comparison between the leakage detection discussed in 2.6 with
+% ultrasound and a detection attachment with microphone for the audio range (20 Hz - 20
+% KHz) should be undertaken. First and foremost the applicability of the respective
+% technology in the foreground. The comparison is shown in Table 2.2.
+% The distance problem makes the ultrasonic method complex. Ultrasonic measurements
+% are provided at regular intervals or are used if a leakage
+% is to be analytically displayed and localized via system variables. Measuring microphones
+% in the audio range are clearly inferior in terms of measurement accuracy, but could
+% be placed in the service of permanent monitoring.
+
+
+
+
+
+% Due to the ability of neural networks to represent different state variables such as noise emissions, for example, can be classified with sufficient accuracy to process monitoring, there are already various experiments and studies in the field of about that. 
+% Already in 2004, KOTANI et al. and ZHANG et al. were able to successfully Application of NN for the detection of gas leaks by recording airborne sound in noisy environments \simpletodo{[REF 35]}. 
+% The results of the two studies confirmed the feasibility of process monitoring supported by ML.
+% Especially in ZHANG, the ability of neural networks as adaptive non-linear filters to act, highlighted \simpletodo{[REF]}. 
+% KOTANI has experience with recordings, which are a longer period of time. This was always done with artificially created, hole-shaped Leaks worked.
+% Also about the use of surface microphones for condition monitoring of larger gas containers there are current publications, in for example, where different NN models are weighed against each other \simpletodo{[REF 36]}.
+% However, since in this work a structure-borne sound based approach is followed, the Results not transferable to the present concept.
+% LIEBETRAU et al. show that a DNN with the recordings of the impact noise of turned parts can be trained to detect defective parts \simpletodo{[REF 30]}. 
+% In the following main part, a new experimental approach will be pursued. The main idea is to develop a dynamic leakage of adjustable leakage rates to generate and analyze.
+
+
+\section{OLD TABLES}
+
+
+% \begin{table}[H]
+%     \centering
+%     \caption{Classification accuracy (\%) of LOO cross validation for data with no background noise.}
+%     \begin{tabular}{l l l l }
+%     \toprule
+%     Condition & Noise Type & DNN LOO & CNN LOO \\ \midrule
+%     Vent Leak & None & 91.45 & 96.63 \\
+%     Tube Leak & None & 94.58 & 99.11 \\
+%     Vent Low & None & 92.92 & 94.45 \\ \midrule
+%     Average  & None & 92.98 & 96.73 \\ \midrule
+    
+%     Vent Leak & Workshop &  88.52 & 98.46\\
+%     Opening & Workshop & 88.69 & 97.02\\
+%     Low Pressure & Workshop & 78.81 & 93.35\\ \midrule
+%     Average & Workshop & 85.34 & 96.28 \\ \midrule
+    
+%     Vent Leak & Workshop Low* &  89.90 & 92.65\\
+%     Opening & Workshop Low & 92.53 & 97.43\\
+%     Low Pressure & Workshop Low & 84.48 & 91.17\\ \midrule
+%     Average & Workshop Low & 88.85 & 93.89 \\ \midrule
+    
+%     Vent Leak & Hydraulic  & 86.71 & 94.24\\
+%     Opening & Hydraulic & 88.68 & 98.39\\
+%     Low Pressure & Hydraulic & 85.68 & 92.75\\ \midrule
+%     Average & Hydraulic & 87.03 & 95.24\\ \midrule
+    
+%     Vent Leak & Hydraulic Low  & 96.07 & 98.55\\
+%     Opening & Hydraulic Low & 91.46 & 96.03\\
+%     Low Pressure & Hydraulic Low & 87.83 & 87.62\\ \midrule
+%     Average & Hydraulic Low & 91.78 & 94.07\\ 
+    
+%     \bottomrule
+%     \end{tabular}
+% 	\label{tab:noise-logo}
+% \end{table}
+
+
+% \begin{table}[H]
+%     \centering
+%     \caption{Results on noisy data when training with data with no background noise (\% accuracy)}
+%     \begin{tabular}{l l l l l}
+%     \toprule
+%     Condition & Noise Type & DNN & CNN & AUG2 \\ \midrule
+    
+%     Vent Leak & Workshop &  61.59 & 58.82 &  83.38\\
+%     Opening & Workshop & 53.16 & 54.67 & 71.24 \\
+%     Low Pressure & Workshop & 64.95 & 64.75 & 78.51 \\ \midrule
+%     Average & Workshop & 59.90 & 59.41 & 77.71  \\ \midrule
+    
+%     Vent Leak & Workshop Low* &  67.70 & 68.42 & 89.52 \\
+%     Opening & Workshop Low & 47.52 & 59.81 & 81.43\\
+%     Low Pressure & Workshop Low & 65.83 & 75.21 & 79.84 \\ \midrule
+%     Average & Workshop Low & 60.35 & 67.81 & 83.60 \\ \midrule
+    
+%     Vent Leak & Hydraulic  & 44.25 & 38.55 & 71.84 \\
+%     Opening & Hydraulic & 41.91 & 41.46 & 54.72 \\
+%     Low Pressure & Hydraulic & 66.65 & 58.33 & 67.33\\ \midrule
+%     Average & Hydraulic & 50.94 & 46.11 & 64.64 \\ \midrule
+    
+%     Vent Leak & Hydraulic Low  & 39.74& 33.49 & 80.34 \\
+%     Opening & Hydraulic Low & 34.88 & 55.27 & 62.98  \\
+%     Low Pressure & Hydraulic Low & 66.72 & 58.56 & 67.92 \\ \midrule
+%     Average & Hydraulic Low & 47.11 & 49.11 & 70.41 \\ 
+%     \bottomrule
+%     \end{tabular}
+% 	\label{tab:noise-train}
+% \end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{LOO results for different models and background noise types (\% accuracy).}
+    \begin{tabular}{l l l l l}
+    \toprule
+    Condition & Noise Type & DNN & CNN & AUG2 \\ \midrule
+    Vent Leak & None & 91.45 & 96.63 &  91.33\\
+    Opening & None & 94.58 & 99.11 &  93.98\\
+    Low Pressure & None & 92.92 & 94.45 & 89.16\\ \midrule
+    Average & None & 92.98 & 96.73 & 91.49 \\ \midrule
+    
+    Vent Leak & Workshop &  88.52 & 98.46 & 92.33\\
+    Opening & Workshop & 88.69 & 97.02 & 91.77\\
+    Low Pressure & Workshop & 78.81 & 93.35 & 86.25\\ \midrule
+    Average & Workshop & 85.34 & 96.28 & 89.84 \\ \midrule
+    
+    Vent Leak & Workshop Low* &  89.90 & 92.65 & 87.83\\
+    Opening & Workshop Low & 92.53 & 97.43 & 92.18\\
+    Low Pressure & Workshop Low & 84.48 & 91.17 & 90.21\\ \midrule
+    Average & Workshop Low & 88.85 & 93.89 & 90.36 \\ \midrule
+    
+    Vent Leak & Hydraulic  & 86.71 & 94.24 &  88.04\\
+    Opening & Hydraulic & 88.68 & 98.39  & 93.78\\
+    Low Pressure & Hydraulic & 85.68 & 92.75 &  91.34\\ \midrule
+    Average & Hydraulic & 87.03 & 95.24 &  91.05\\ \midrule
+    
+    Vent Leak & Hydraulic Low  & 96.07 & 98.55 &  92.72\\
+    Opening & Hydraulic Low & 91.46 & 96.03 & 86.42\\
+    Low Pressure & Hydraulic Low & 87.83 & 87.62 & 84.73\\ \midrule
+    Average & Hydraulic Low & 91.78 & 94.07 & 87.96 \\
+    
+    \bottomrule
+    \end{tabular}
+	\label{tab:noise-logo}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Results for each microphone on noisy data when training with data with no background noise (\% accuracy)}
+    \begin{tabular}{l l l l l l}
+    \toprule
+    Condition & Noise Type & MIC 1 & MIC 2 & MIC 3 & MIC 4 \\ \midrule
+    
+    Vent Leak & Workshop & 58.82 & 50.12 & 49.81 & 51.41 \\
+    Opening & Workshop & 54.67 & 33.33 & 33.33 & 33.38 \\
+    Low Pressure & Workshop & 64.75 & 59.48 & 68.32 & 41.26\\ \midrule
+    Average & Workshop & 59.41 & 47.64 & 50.49 & 42.02 \\ \midrule
+    
+    Vent Leak & Hydraulic & 38.55 & 34.04 & 37.99 & 33.55 \\
+    Opening & Hydraulic & 41.46 & 33.11 & 33.11 & 33.10 \\
+    Low Pressure & Hydraulic & 58.33 & 44.72 & 66.82 & 48.50 \\ \midrule
+    Average & Hydraulic & 46.11 & 37.29 & 45.97 & 38.38 \\ 
+    
+    \bottomrule
+    \end{tabular}
+	\label{tab:mic-nonoise}
+\end{table}
+
+
+%%%%% DIFFFERNT STRUCTURE
+% % \begin{table}[H]
+%     \centering
+%     \begin{tabular}{l l l l l l}
+%     \toprule
+%     Model & Noise Type & Vent Leak & Tube Leak & Vent Low & Avg \\ \midrule
+%     DNN & None & \\
+%     DNN & Workshop & \\
+%     DNN & Workshop Low & \\
+%     DNN & Hydraulic & \\
+%     DNN & Hydraulic Low & \\ \midrule
+%     CNN & None & \\
+%     CNN & Workshop & \\
+%     CNN & Workshop Low & \\
+%     CNN & Hydraulic & \\
+%     CNN & Hydraulic Low & \\
+    
+%     \bottomrule
+%     \end{tabular}
+%     \caption{Background noise leave one group out validation}
+% 	\label{tab:noise-logo}
+% \end{table}
+
+
+% \begin{table}[h]
+%   \centering
+%   \caption{Experimental conditions and amount of data per microphone for each label in seconds ($s$)}
+%   \begin{tabular}{ l l l l l} \toprule
+%     Leak Type & Noise Type & Noise Volume  \\ \midrule
+%     Vent & None & - \\
+%     Vent & Workshop & High \\
+%     Vent & Hydraulic & High \\
+%     Vent & Workshop & Low \\
+%     Vent & Hydraulic & Low \\
+%     Vent Low & None & - \\
+%     Vent Low & Workshop & High \\
+%     Vent Low & Hydraulic & High \\
+%     Vent Low & Workshop & Low \\
+%     Vent Low & Hydraulic & Low \\
+%     Tube & None & - \\
+%     Tube & Workshop & High \\
+%     Tube & Hydraulic & High \\
+%     Tube & Workshop & Low \\
+%     Tube & Hydraulic & Low \\
+%     \bottomrule
+%   \end{tabular}
+% \end{table}\label{tab:conditions}
+
+
+%%%%%%%% JAKOBS TEXT %%%%%%%%%%%%%%%%
+
+% \section{Setup}
+
+% The test object is a Festo Didactic System, which consists of a tool table with a rail field that can be freely equipped with various pneumatic elements. By means of this modular system, a simple pneumatic circuit is to be implemented. The use-cases of a a leaking connection point and worn tubing is simulated. Here the leakage noises are generated by a combination of a choke vent (CV1) with another choke vent (CV2) or folded tubing. CV1 regulates the airflow by turning a knurled screw that generates variable flow resistance. 
+
+% \subsection{Microphone setup}
+
+% For optimum recording of the leakage noise, microphones with an omnidirectional characteristic and sufficiently linear frequency response in the range 1 - 20 kHz is used (Earthworks M30). Eight microphones are paired to four fixed positions.  Two microphone positions with 6 cm and 60 cm are held by markings. The microphone is directed laterally towards the valve in order to obtain as much as possible of the sound field discussed in chapter 2.5 of the escaping free jet.
+
+
+% \subsection{Generating a two-class problem}
+
+% Fig. 1 illustrates the detection process: Leakage type and internal pressure of a pipe cause turbulences (1.), which are described in radiation characteristics as well as, depending on the frequency range under consideration an acoustic profile. The space between the transmitter and receiver also has an Numerous influencing variables that influence the measurement signal. Thus the direct For example, the distance between the sound source and microphone is decisivefor signal levels and runtime-dependent effects. In addition, in practice overlaps by ambient noise and spatial influences such as reflections and diffuse sound.
+
+% The spectrogram in fig shows the recording of the leakage noise. The frequencies of the turbulently exiting air are plotted over time and the number of screw rotations. To increase visibility of the leakage sounds main features, gain is added. Recorded sound events are displayed relatively to the recording threshold level from green (low) via yellow (medium) to red (high). The knurled screw on valve two is now opened in $30s$ intervals by a fixed amount. For the interval $0 < n  3$ whole rotations are made. This action is based on consideration of the component characteristic curve (blue) from \ref{fig:spec+qnn}. From $n = 3$ half turns are made on the second screw to increase the accuracy. The resulting Recordings are later used as a reference for a leak-free environment.
+
+% If you now look at frequencies and levels, the following becomes apparent: In the range 0 < n < 5.0 the microphone does not register any periodically occurring signal. If the screw is turned up further from $n = 5$ to $n = 5.5$ on a level maximum in the range 3.1 kHz, 7.1  kHz in the range 9.2 kHz or 14.8 kHz and beyond the audible spectrum become visible. The increasing sound level at larger n is highlighted by red coloring. For increasing screw turns the volume around those frequency bands increases the peak levels of the prominent bands however are not influenced by the screw position. Thus the average values of the frequency bands remain constant. For the upcoming measurements a signal threshold of $n = 5$ is assumed. \ref{tab:mappingclasses} links the screw turns to the two conditions \textit{no leakage/OK} and \textit{leakage/nOK}.
+
+% \begin{table}[h]
+%     \centering
+% 	\begin{tabular}{ | l | c | c | c | c | c | c | c | c | c | }
+% 		\hline
+% 		n $=$  & 0 & . . . & 3 & 3.5 & . . . & 5 & 5.5 & . . . & 9 \\ \hline
+% 		Condition & $OK$ &   . . . & $OK$ & $OK$ & . . . & $OK$ & $nOK$ & . . . & $nOK$ \\ \hline
+% 		\multicolumn{1}{c}{} & \multicolumn{3}{c}{\upbracefill}& \multicolumn{3}{c}{\upbracefill}& \multicolumn{3}{c}{\upbracefill}\\[-1ex]
+% 		\multicolumn{1}{c}{} & \multicolumn{3}{c}{no leak} &\multicolumn{3}{c}{leak not detectable}&\multicolumn{3}{c}{leak detectable}
+% 	\end{tabular}
+% 	\caption{Mapping screw turns to binary classes.}
+% 	\label{tab:mappingclasses}
+% \end{table}
+
+% \subsection{Measurement series}
+
+% % \begin{table}[h]
+% %     \begin{tabular}{lll}
+% %     \centering
+% %     Code       & Name      & Parameters/Description\\
+% %     \hline
+% %     \textbf{v} & Vent Leak   & 6 Bar, choke vent, quiet lab\\ 
+% %     \textbf{p} & Low Pressure Vent Leak  & 5 Bar, choke vent, quiet lab\\
+% %     \textbf{o} & Damaged Tubing Leak  & 6 Bar, tubing, quiet lab\\     
+% %     \textbf{w} & Vent Leak with Workshop Noise  & 6 Bar, choke vent, added aperiodic workshop ambient sounds\\
+% %     \textbf{h} & Vent Leak with Hydraulic Noise & 6 Bar, choke vent, added periodic sound of screeching piston\\
+% %     \textbf{ow} & Tubing Leak with Workshop Noise & \\
+% %     \textbf{oh} & Tubing Leak with Hydraulic Noise & \\
+% %     \textbf{pw} & Low Pressure Vent Leak with Workshop Noise & \\
+% %     \textbf{ph} & Low Pressure Vent Leak with Hydraulic Noise & \\
+% %     \textbf{po} & Low Pressure with Tubing Leak & \\
+% %     \label{series}
+% %     \end{tabular}
+% % \end{table}
+
+% \begin{table}[h]
+%   \centering
+%   \begin{tabular}{l l l l}
+%       Code & Leak & Pressure & Noise  \\ \hline
+%         \textbf{v} & Vent & Normal & None \\
+%         \textbf{w} & Vent & Normal & Workshop \\
+%         \textbf{h} & Vent & Normal & Hydraulic \\
+%         \textbf{p} & Vent & Low & None \\
+%         \textbf{pw} & Vent & Low & Workshop \\
+%         \textbf{ph} & Vent & low & Hydraulic \\
+%         \textbf{o} & Tube & Normal & None \\
+%         \textbf{ow} & Tube & Normal & Workshop \\
+%         \textbf{oh} & Tube & Normal & Hydraulic \\
+%         \textbf{po} & Tube & low & None \\
+%   \end{tabular}
+%   \label{tab:data-var}
+%   \caption{Data Variations}
+% \end{table}
