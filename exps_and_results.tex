@@ -2,12 +2,12 @@
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.95\columnwidth]{images/cnn_flow.png}
+	\includegraphics[width=0.95\columnwidth]{images/cnn_flow_updated.png}
 	\caption{Baseline CNN architecture for leak detection.}
 	\label{fig:cnn}
 \end{figure}
 
-We provide a baseline convolutional neural network (CNN) for evaluating the effectiveness of the proposed data driven approach. As input to the CNN, we use a two-dimensional time-frequency representation of the data. This is done by obtaining spectrogram representations of the raw audio by transforming the data from the time-domain using the short time Fourier transform (STFT) with sliding windows over the raw signal. We calculate the magnitude of the STFT with 512 frequency bins for windows of 1024 audio samples with an overlap of 50\%. To create an input patch, 24 spectral frames are concatenated to create patches with a duration of 180 milliseconds seconds, affording near real-time detection. Zero mean and unit variance normalization is applied per frequency bin, using mean and variance parameters calculated from the training data.
+We provide a baseline convolutional neural network (CNN) for evaluating the effectiveness of the proposed data driven approach. As input to the CNN, we use a two-dimensional time-frequency representation of the data. This is done by obtaining spectrogram representations of the raw audio by transforming the data from the time-domain using the short time Fourier transform (STFT) with sliding windows over the raw signal. We calculate the magnitude of the STFT for 1024 frequency bins with windows of 1024 samples and an overlap of 50\%. To create an input patch, 24 spectral frames are concatenated to create patches with a duration of 290 milliseconds seconds, affording near real-time detection. Zero mean and unit variance normalization is applied per frequency bin, using mean and variance parameters calculated from the training data.
 
 The CNN's feature representation network is composed of a Gaussian noise layer on the input, followed by three convolutional layers with max-pooling, and dropout applied at each layer. All layers use Rectified Linear Unit (ReLU) activation. The output is flattened to feed into a dense classification network, which is composed of a single hidden dense layer using ReLU activation which feeds into the final output layer with a SoftMax activation. The full architecture details and hyperparameters are shown in Figure \ref{fig:cnn}.
 
